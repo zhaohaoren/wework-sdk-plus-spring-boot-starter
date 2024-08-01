@@ -15,10 +15,4 @@ public class WxApiBaseResponse {
     private Integer errCode;
     @JsonProperty("errmsg")
     private String errMsg;
-    @JsonProperty("requestURL")
-    private String requestUrl;
-    @JsonProperty("requestArgs")
-    private String requestArgs;
-    @JsonProperty("corpId")
-    private String corpId;
 }

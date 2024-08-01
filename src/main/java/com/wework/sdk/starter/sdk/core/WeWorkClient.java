@@ -4,10 +4,13 @@ import cn.hutool.core.util.StrUtil;
 import cn.hutool.json.JSONUtil;
 import com.wework.sdk.starter.sdk.wework.api.WxApiBaseRequest;
 import com.wework.sdk.starter.sdk.wework.api.base.TokenRequest;
+import com.wework.sdk.starter.sdk.wework.api.corpgroup.DownStreamTokenRequest;
 import com.wework.sdk.starter.sdk.wework.exception.TokenExpiredException;
 import com.wework.sdk.starter.sdk.wework.exception.WxCorpInvalidException;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
+
+import java.util.Objects;
 
 /**
  * @author zhaohaoren
@@ -23,6 +26,11 @@ public class WeWorkClient {
     private String secret;
 
     private volatile String token;
+
+    /**
+     * 上游的主体
+     */
+    private WeWorkClient upperStreamClient;
 
 
     public <T> T request(WxApiBaseRequest<T> request) {
@@ -42,7 +50,7 @@ public class WeWorkClient {
                 return request.request(token);
             }
         } catch (TokenExpiredException e) {
-            log.error("微信API请求请求失败！request=> {}", JSONUtil.toJsonStr(request), e);
+            log.error("request wework fail！request=> {}", JSONUtil.toJsonStr(request), e);
         }
         return null;
     }
@@ -51,16 +59,31 @@ public class WeWorkClient {
     private synchronized void refreshToken(String oldToken) {
         //刷新api的token
         if (StrUtil.isNotBlank(oldToken) && StrUtil.isNotBlank(this.token) && !oldToken.equals(this.token)) {
-            log.info("token已被其他线程更新");
+            log.info("token was updated");
             return;
         }
         // 刷新token
         try {
-            log.info(">>>> 线程【{}】更新主体 【{}】token开始", Thread.currentThread().getName(), corpId);
-            this.token = TokenRequest.builder().corpId(corpId).secret(secret).build().request(null);
-            log.info("<<<< 线程【{}】更新主体 【{}】token结束", Thread.currentThread().getName(), corpId);
+            log.info(">>>> thread:{} update corp {} token start", Thread.currentThread().getName(), corpId);
+            if (Objects.isNull(upperStreamClient)) {
+                // 主体本体token
+                this.token = TokenRequest.builder().corpId(corpId).secret(secret).build().request();
+            } else {
+                try {
+                    // 更新下游的token
+                    this.token = DownStreamTokenRequest.builder().build().request(upperStreamClient.getToken());
+                } catch (TokenExpiredException e) {
+                    try {
+                        this.token = DownStreamTokenRequest.builder().build().request(TokenRequest.builder().corpId(upperStreamClient.getCorpId())
+                                .secret(upperStreamClient.getSecret()).build().request());
+                    } catch (TokenExpiredException ex) {
+                        log.error("update {} token fail", corpId, ex);
+                    }
+                }
+            }
+            log.info(">>>> thread {} update corp {}token end", Thread.currentThread().getName(), corpId);
         } catch (WxCorpInvalidException e) {
-            log.info("{} 主体失效，设置token标志位", this.corpId);
+            log.info("{} corp invalid", this.corpId);
             this.token = null;
         }
     }

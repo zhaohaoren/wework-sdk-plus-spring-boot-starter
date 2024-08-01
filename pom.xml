@@ -3,7 +3,7 @@
 
     <groupId>com.msp</groupId>
     <artifactId>wework-sdk-plus-spring-boot-starter</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
@@ -36,6 +36,10 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.20</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
         </dependency>
         <dependency>
             <groupId>cn.hutool</groupId>

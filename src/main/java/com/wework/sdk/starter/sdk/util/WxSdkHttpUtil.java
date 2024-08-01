@@ -75,7 +75,7 @@ public class WxSdkHttpUtil {
             String requestBody = objectMapper.writeValueAsString(body);
             response = HttpUtil.post(url, requestBody);
             if (logPrint) {
-                log.info("response:=> {}", response);
+                log.info("response => {}", response);
             }
             return objectMapper.readValue(response, typeReference);
         } catch (JsonProcessingException e) {

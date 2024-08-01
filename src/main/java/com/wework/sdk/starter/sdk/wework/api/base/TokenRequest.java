@@ -2,7 +2,6 @@ package com.wework.sdk.starter.sdk.wework.api.base;
 
 import cn.hutool.core.util.StrUtil;
 import com.wework.sdk.starter.sdk.util.WxSdkHttpUtil;
-import com.wework.sdk.starter.sdk.wework.api.WxApiBaseRequest;
 import com.wework.sdk.starter.sdk.wework.api.base.response.TokenResponse;
 import com.wework.sdk.starter.sdk.wework.consts.WxErrCodeEnum;
 import com.wework.sdk.starter.sdk.wework.exception.WxCorpInvalidException;
@@ -25,10 +24,10 @@ public class TokenRequest {
     private String corpId;
     private String secret;
 
-    public String request(String token) throws WxCorpInvalidException {
+    public String request() throws WxCorpInvalidException {
         TokenResponse tokenResponse = WxSdkHttpUtil.get(String.format(URL, corpId, secret), TokenResponse.class);
         if (Objects.isNull(tokenResponse)) {
-            log.error("获取token接口返回空");
+            log.error("{} get token empty", corpId);
             return StrUtil.EMPTY;
         }
 
@@ -36,10 +35,10 @@ public class TokenRequest {
             return tokenResponse.getAccessToken();
         }
         if (WxErrCodeEnum.TOKEN_FREQUENT.getErrCode().equals(tokenResponse.getErrCode())) {
-            log.error("token请求太频繁");
+            log.error("{} token get is busy", corpId);
         }
         if (WxErrCodeEnum.CORP_INVALID.getErrCode().equals(tokenResponse.getErrCode())) {
-            log.error("{} 主体失效", corpId);
+            log.error("{} invalid", corpId);
             throw new WxCorpInvalidException();
         }
         return StrUtil.EMPTY;
