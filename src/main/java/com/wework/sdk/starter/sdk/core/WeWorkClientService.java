@@ -2,6 +2,7 @@ package com.wework.sdk.starter.sdk.core;
 
 import cn.hutool.core.util.StrUtil;
 import com.wework.sdk.starter.sdk.wework.consts.WeWorkSystemAgentId;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,10 +21,33 @@ import java.util.stream.Collectors;
  *
  * @author zhaohaoren
  */
-
+@Slf4j
 public class WeWorkClientService {
 
-    private final Map<String, WeWorkClient> TOKEN_REPO = new ConcurrentHashMap<>();
+    /**
+     * 普通主体 - 系统通讯录应用TOKEN
+     */
+    private final Map<String, WeWorkClient> NORMAL_CORP_USER_MAP = new ConcurrentHashMap<>(0);
+    /**
+     * 普通主体 - 系统外部联系人应用TOKEN
+     */
+    private final Map<String, WeWorkClient> NORMAL_CORP_EXTERNAL_MAP = new ConcurrentHashMap<>(0);
+    /**
+     * 普通主体+多自建应用 TOKEN
+     * key: 主体id+自建应用id
+     */
+    private final Map<String, WeWorkClient> NORMAL_MULTI_AGENT_MAP = new ConcurrentHashMap<>(0);
+    /**
+     * 普通主体-唯一自建应用 TOKEN
+     * key: 主体id
+     */
+    private final Map<String, WeWorkClient> NORMAL_SINGLE_AGENT_MAP = new ConcurrentHashMap<>();
+    /**
+     * 上下游
+     * key: 上下游中的主体id
+     * value: (共享的单agent-id，上游主体信息)
+     */
+    private final Map<String, WeWorkClient> GROUP_CORP_MAP = new ConcurrentHashMap<>();
 
     /**
      * 添加需要托管的 token

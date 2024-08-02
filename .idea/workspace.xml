@@ -5,23 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c9f51674-9974-4fce-aa28-3d79c180185a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/api/corpgroup/DownStreamTokenRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/consts/EventXmlConst.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/consts/WeWorkSystemAgentId.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/api/corpgroup/ExternalUserIdToPendingIdRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/api/corpgroup/response/ExternalUserIdToPendingIdResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/autoconfigure/WeWorkSdkAutoConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/autoconfigure/WeWorkSdkAutoConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/core/WeWorkApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/core/WeWorkClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/core/WeWorkClientConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/core/WeWorkClientService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/util/WxSdkHttpUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/util/WxSdkHttpUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/api/WxApiBaseResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/api/WxApiBaseResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/api/base/TokenRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/api/base/TokenRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/api/corpgroup/GetTokenRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/core/WeWorkClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/core/WeWorkClientService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/api/corpgroup/ListAppShareInfoRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/api/corpgroup/ListAppShareInfoRequest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +55,9 @@
     "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
     "Maven.wework-sdk-plus-spring-boot-starter [clean].executor": "Run",
     "Maven.wework-sdk-plus-spring-boot-starter [compile].executor": "Run",
+    "Maven.wework-sdk-plus-spring-boot-starter [deploy].executor": "Run",
     "Maven.wework-sdk-plus-spring-boot-starter [install].executor": "Run",
+    "Maven.wework-sdk-plus-spring-boot-starter [package].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "kotlin-language-version-configured": "true",
@@ -75,7 +67,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.importing",
+    "settings.editor.selected.configurable": "MavenSettings",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -87,21 +79,6 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
-  </component>
-  <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="wework-sdk-plus-spring-boot-starter" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="wework-sdk-plus-spring-boot-starter" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -127,12 +104,24 @@
       <workItem from="1722478222867" duration="106000" />
       <workItem from="1722478351723" duration="6000" />
       <workItem from="1722478396212" duration="79000" />
-      <workItem from="1722478513282" duration="14929000" />
+      <workItem from="1722478513282" duration="14958000" />
+      <workItem from="1722579919404" duration="8189000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
