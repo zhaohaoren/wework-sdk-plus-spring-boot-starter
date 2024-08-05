@@ -1,7 +1,7 @@
 package com.wework.sdk.starter.sdk.wework.api;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.PropertyNamingStrategies;
+import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import lombok.Data;
 
@@ -9,7 +9,7 @@ import lombok.Data;
  * @author zhaohaoren
  */
 @Data
-@JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
+@JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 public class WxApiBaseResponse {
     @JsonProperty("errcode")
     private Integer errCode;

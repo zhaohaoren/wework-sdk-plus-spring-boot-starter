@@ -25,7 +25,7 @@ public class TokenRequest {
     private String secret;
 
     public String request() throws WxCorpInvalidException {
-        TokenResponse tokenResponse = WxSdkHttpUtil.get(String.format(URL, corpId, secret), TokenResponse.class);
+        TokenResponse tokenResponse = WxSdkHttpUtil.get(String.format(URL, corpId, secret), this.corpId, TokenResponse.class);
         if (Objects.isNull(tokenResponse)) {
             log.error("{} get token empty", corpId);
             return StrUtil.EMPTY;

@@ -1,7 +1,10 @@
 package com.wework.sdk.starter.sdk.wework.api.corpgroup;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.wework.sdk.starter.sdk.util.WxSdkHttpUtil;
 import com.wework.sdk.starter.sdk.wework.api.WxApiBaseRequest;
+import com.wework.sdk.starter.sdk.wework.api.corpgroup.response.ListAppShareInfoResponse;
 import com.wework.sdk.starter.sdk.wework.exception.TokenExpiredException;
 import lombok.Builder;
 import lombok.Data;
@@ -16,7 +19,7 @@ import lombok.extern.slf4j.Slf4j;
 @Data
 @Slf4j
 @Builder
-public class ListAppShareInfoRequest implements WxApiBaseRequest<String> {
+public class ListAppShareInfoRequest extends WxApiBaseRequest<ListAppShareInfoResponse> {
 
     private final static String URL = "https://qyapi.weixin.qq.com/cgi-bin/corpgroup/corp/list_app_share_info?access_token=";
 
@@ -34,7 +37,8 @@ public class ListAppShareInfoRequest implements WxApiBaseRequest<String> {
     private String cursor;
 
     @Override
-    public String request(String token) throws TokenExpiredException {
-        return "";
+    public ListAppShareInfoResponse request(String token) throws TokenExpiredException {
+        return WxSdkHttpUtil.post(URL + token, this.corpRoute, this, new TypeReference<ListAppShareInfoResponse>() {
+        }, false);
     }
 }

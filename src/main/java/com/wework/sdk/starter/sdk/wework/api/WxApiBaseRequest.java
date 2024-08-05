@@ -8,7 +8,9 @@ import com.wework.sdk.starter.sdk.wework.exception.TokenExpiredException;
  *
  * @author zhaohaoren
  */
-public interface WxApiBaseRequest<T> {
+public abstract class WxApiBaseRequest<T> {
+
+    public String corpRoute;
 
     /**
      * 请求
@@ -16,5 +18,5 @@ public interface WxApiBaseRequest<T> {
      * @return 结果
      * @throws TokenExpiredException token过期，需要外部去处理token过期的逻辑
      */
-    T request(String token) throws TokenExpiredException;
+    public abstract T request(String token) throws TokenExpiredException;
 }

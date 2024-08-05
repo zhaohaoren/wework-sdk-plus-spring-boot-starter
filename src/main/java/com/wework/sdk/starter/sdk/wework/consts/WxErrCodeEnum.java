@@ -19,7 +19,7 @@ public enum WxErrCodeEnum {
     /**
      * 新增：cookie过期，但请求结果是参数错误
      */
-    COOKIE_PARAM_ERR(-30001,"参数错误"),
+    COOKIE_PARAM_ERR(-30001, "参数错误"),
 
     /**
      * 没有错误

@@ -13,15 +13,16 @@ import java.util.List;
  */
 @Getter
 @Setter
-public class ExternalUserIdToPendingIdResponse extends WxApiBaseResponse {
+public class UnionIdToExternalUserIdResponse extends WxApiBaseResponse {
 
-    private List<PendingItem> result;
+    @JsonProperty("external_userid_info")
+    private List<externalUserId> externalUserIdInfo;
 
     @Data
-    public static class PendingItem {
+    public static class externalUserId {
+        @JsonProperty("corpid")
+        private String corpId;
         @JsonProperty("external_userid")
         private String externalUserId;
-        @JsonProperty("pending_id")
-        private String pendingId;
     }
 }

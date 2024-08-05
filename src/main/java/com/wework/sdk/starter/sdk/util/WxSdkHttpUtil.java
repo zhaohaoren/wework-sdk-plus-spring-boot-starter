@@ -1,15 +1,19 @@
 package com.wework.sdk.starter.sdk.util;
 
 import cn.hutool.core.util.StrUtil;
+import cn.hutool.extra.spring.SpringUtil;
 import cn.hutool.http.HttpRequest;
 import cn.hutool.http.HttpUtil;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.wework.sdk.starter.sdk.WeWorkSdkProperties;
+import com.wework.sdk.starter.sdk.wework.consts.WeWorkConst;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.Map;
+import java.util.Objects;
 
 /**
  * @author zhaohaoren
@@ -38,12 +42,17 @@ public class WxSdkHttpUtil {
      * @return 请求结果
      */
     public static <T> T get(String url,
+                            String corpId,
                             Map<String, String> headerMap,
                             Map<String, Object> paramMap,
                             Class<T> respClass,
                             Boolean logPrint) {
         String response = null;
         try {
+            WeWorkSdkProperties properties = SpringUtil.getBean(WeWorkSdkProperties.class);
+            if (Objects.nonNull(properties) && StrUtil.isNotBlank(properties.getProxyGatewayUrl())) {
+                url = properties.getProxyGatewayUrl() + "/" + corpId + StrUtil.removePrefix(url, WeWorkConst.DOMAIN);
+            }
             response = HttpRequest.get(url)
                     .headerMap(headerMap, true)
                     .form(paramMap)
@@ -69,9 +78,13 @@ public class WxSdkHttpUtil {
      * @param <B>           请求体对象类型
      * @return 请求结果
      */
-    public static <T, B> T post(String url, B body, TypeReference<T> typeReference, Boolean logPrint) {
+    public static <T, B> T post(String url, String corpId, B body, TypeReference<T> typeReference, Boolean logPrint) {
         String response = null;
         try {
+            WeWorkSdkProperties properties = SpringUtil.getBean(WeWorkSdkProperties.class);
+            if (Objects.nonNull(properties) && StrUtil.isNotBlank(properties.getProxyGatewayUrl())) {
+                url = properties.getProxyGatewayUrl() + "/" + corpId + StrUtil.removePrefix(url, WeWorkConst.DOMAIN);
+            }
             String requestBody = objectMapper.writeValueAsString(body);
             response = HttpUtil.post(url, requestBody);
             if (logPrint) {
@@ -85,12 +98,12 @@ public class WxSdkHttpUtil {
     }
 
 
-    public static <T> T get(String url, Class<T> respClass) {
-        return get(url, null, null, respClass, false);
+    public static <T> T get(String url, String corpId, Class<T> respClass) {
+        return get(url, corpId, null, null, respClass, false);
     }
 
-    public static <T> T get(String url, Map<String, String> headerMap, Class<T> respClass) {
-        return get(url, headerMap, null, respClass, false);
+    public static <T> T get(String url, String corpId, Map<String, String> headerMap, Class<T> respClass) {
+        return get(url, corpId, headerMap, null, respClass, false);
     }
 
 

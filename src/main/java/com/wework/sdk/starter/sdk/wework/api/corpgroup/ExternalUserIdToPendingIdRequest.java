@@ -21,7 +21,7 @@ import java.util.List;
 @Data
 @Slf4j
 @Builder
-public class ExternalUserIdToPendingIdRequest implements WxApiBaseRequest<ExternalUserIdToPendingIdResponse> {
+public class ExternalUserIdToPendingIdRequest extends WxApiBaseRequest<ExternalUserIdToPendingIdResponse> {
 
     private static final String URL = "https://qyapi.weixin.qq.com/cgi-bin/corpgroup/batch/external_userid_to_pending_id?access_token=";
 
@@ -32,7 +32,7 @@ public class ExternalUserIdToPendingIdRequest implements WxApiBaseRequest<Extern
 
     @Override
     public ExternalUserIdToPendingIdResponse request(String token) throws TokenExpiredException {
-        return WxSdkHttpUtil.post(URL + token, this, new TypeReference<ExternalUserIdToPendingIdResponse>() {
+        return WxSdkHttpUtil.post(URL + token, this.corpRoute, this, new TypeReference<ExternalUserIdToPendingIdResponse>() {
         }, false);
     }
 }

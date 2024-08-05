@@ -19,7 +19,7 @@ import lombok.extern.slf4j.Slf4j;
 @Data
 @Slf4j
 @Builder
-public class DownStreamTokenRequest implements WxApiBaseRequest<String> {
+public class DownStreamTokenRequest extends WxApiBaseRequest<String> {
 
     private static final String URL = "https://qyapi.weixin.qq.com/cgi-bin/corpgroup/corp/gettoken?access_token=";
 
@@ -32,7 +32,7 @@ public class DownStreamTokenRequest implements WxApiBaseRequest<String> {
 
     @Override
     public String request(String token) throws TokenExpiredException {
-        TokenResponse tokenResponse = WxSdkHttpUtil.post(URL + token, this, new TypeReference<TokenResponse>() {
+        TokenResponse tokenResponse = WxSdkHttpUtil.post(URL + token, this.corpRoute, this, new TypeReference<TokenResponse>() {
         }, false);
         return tokenResponse.getAccessToken();
     }

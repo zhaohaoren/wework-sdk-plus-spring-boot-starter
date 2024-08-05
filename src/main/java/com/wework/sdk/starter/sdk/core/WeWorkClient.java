@@ -38,6 +38,11 @@ public class WeWorkClient {
             refreshToken(null);
         }
         try {
+            if (Objects.isNull(upperStreamClient)) {
+                request.corpRoute = this.corpId;
+            } else {
+                request.corpRoute = this.upperStreamClient.corpId;
+            }
             String curToken = this.token;
             try {
                 return request.request(curToken);
@@ -70,6 +75,7 @@ public class WeWorkClient {
                 this.token = TokenRequest.builder().corpId(corpId).secret(secret).build().request();
             } else {
                 try {
+                    // todo: token设置
                     // 更新下游的token
                     this.token = DownStreamTokenRequest.builder().build().request(upperStreamClient.getToken());
                 } catch (TokenExpiredException e) {

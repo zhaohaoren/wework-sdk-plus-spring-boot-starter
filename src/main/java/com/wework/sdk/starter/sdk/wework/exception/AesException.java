@@ -21,6 +21,11 @@ public class AesException extends Exception {
 
     private int code;
 
+    public AesException(int code) {
+        super(getMessage(code));
+        this.code = code;
+    }
+
     private static String getMessage(int code) {
         switch (code) {
             case ValidateSignatureError:
@@ -52,10 +57,5 @@ public class AesException extends Exception {
 
     public int getCode() {
         return code;
-    }
-
-    public AesException(int code) {
-        super(getMessage(code));
-        this.code = code;
     }
 }
