@@ -27,6 +27,8 @@ public class WeWorkClient {
 
     private volatile String token;
 
+    private String wxOpenPlatform;
+
     /**
      * 上游的主体
      */
@@ -74,18 +76,9 @@ public class WeWorkClient {
                 // 主体本体token
                 this.token = TokenRequest.builder().corpId(corpId).secret(secret).build().request();
             } else {
-                try {
-                    // todo: token设置
-                    // 更新下游的token
-                    this.token = DownStreamTokenRequest.builder().build().request(upperStreamClient.getToken());
-                } catch (TokenExpiredException e) {
-                    try {
-                        this.token = DownStreamTokenRequest.builder().build().request(TokenRequest.builder().corpId(upperStreamClient.getCorpId())
-                                .secret(upperStreamClient.getSecret()).build().request());
-                    } catch (TokenExpiredException ex) {
-                        log.error("update {} token fail", corpId, ex);
-                    }
-                }
+                // 更新下游的token
+                this.token = upperStreamClient.request(DownStreamTokenRequest.builder()
+                        .corpId(corpId).businessType(1).agentId(Integer.valueOf(agentId)).build());
             }
             log.info(">>>> thread {} update corp {}token end", Thread.currentThread().getName(), corpId);
         } catch (WxCorpInvalidException e) {

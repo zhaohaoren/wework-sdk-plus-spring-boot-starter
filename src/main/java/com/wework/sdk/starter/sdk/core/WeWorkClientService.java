@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -101,5 +102,15 @@ public class WeWorkClientService {
 
     public WeWorkClient corpGroup(String corpId) {
         return groupCorpTokenMap.getOrDefault(corpId, DEFAULT_CLIENT);
+    }
+
+    public WeWorkClient corpGroup(Integer upstreamCode) {
+        String code = String.valueOf(upstreamCode);
+        for (WeWorkClient value : groupCorpTokenMap.values()) {
+            if (Objects.isNull(value.getUpperStreamClient()) && value.getWxOpenPlatform().equals(code)) {
+                return value;
+            }
+        }
+        return DEFAULT_CLIENT;
     }
 }

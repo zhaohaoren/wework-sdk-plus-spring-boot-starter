@@ -5,46 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c9f51674-9974-4fce-aa28-3d79c180185a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/core/WeWorkClientProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/api/corpgroup/response/ListAppShareInfoResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/api/corpgroup/response/UnionIdToExternalUserIdResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/api/corpgroup/response/UnionIdToPendingIdResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/api/department/response/DepartmentListResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/api/externalcontact/response/ContactBatchResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/api/externalcontact/response/ContactDetailResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/api/externalcontact/response/ContactListResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/api/externalcontact/response/GroupChatDetailResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/api/externalcontact/response/GroupChatListResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/api/user/response/UserListResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/api/user/response/UserSimpleListResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/consts/WeWorkConst.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/autoconfigure/WeWorkSdkAutoConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/autoconfigure/WeWorkSdkAutoConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/core/WeWorkClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/core/WeWorkClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/core/WeWorkClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/core/WeWorkClientService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/util/WxSdkHttpUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/util/WxSdkHttpUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/api/WxApiBaseRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/api/WxApiBaseRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/api/WxApiBaseResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/api/WxApiBaseResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/api/base/TokenRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/api/base/TokenRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/api/corpgroup/DownStreamTokenRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/api/corpgroup/DownStreamTokenRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/api/corpgroup/ExternalUserIdToPendingIdRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/api/corpgroup/ExternalUserIdToPendingIdRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/api/corpgroup/ListAppShareInfoRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/api/corpgroup/ListAppShareInfoRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/api/corpgroup/UnionIdToExternalUserIdRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/api/corpgroup/UnionIdToExternalUserIdRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/api/corpgroup/UnionIdToPendingIdRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/api/corpgroup/UnionIdToPendingIdRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/api/corpgroup/response/ExternalUserIdToPendingIdResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/api/corpgroup/response/ExternalUserIdToPendingIdResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/api/department/DepartmentListRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/api/department/DepartmentListRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/api/externalcontact/ContactBatchRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/api/externalcontact/ContactBatchRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/api/externalcontact/ContactDetailRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/api/externalcontact/ContactDetailRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/api/externalcontact/ContactListRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/api/externalcontact/ContactListRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/api/externalcontact/ContactRemarkRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/api/externalcontact/ContactRemarkRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/api/externalcontact/GroupChatDetailRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/api/externalcontact/GroupChatDetailRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/api/externalcontact/GroupChatListRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/api/externalcontact/GroupChatListRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/api/user/UserListRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/api/user/UserListRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/api/user/UserSimpleListRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/api/user/UserSimpleListRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/api/corpgroup/response/UnionIdToPendingIdResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/api/corpgroup/response/UnionIdToPendingIdResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/consts/WxErrCodeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/consts/WxErrCodeEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/exception/AesException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wework/sdk/starter/sdk/wework/exception/AesException.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,31 +49,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Application.WeWorkClientService.executor": "Run",
-    "Application.WxApiBaseResponse.executor": "Run",
-    "Application.WxSdkHttpUtil.executor": "Run",
-    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
-    "Maven.wework-sdk-plus-spring-boot-starter [clean].executor": "Run",
-    "Maven.wework-sdk-plus-spring-boot-starter [compile].executor": "Run",
-    "Maven.wework-sdk-plus-spring-boot-starter [deploy].executor": "Run",
-    "Maven.wework-sdk-plus-spring-boot-starter [install].executor": "Run",
-    "Maven.wework-sdk-plus-spring-boot-starter [package].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/zhaohaoren/workspace/corp/tt/wework-sdk-plus-spring-boot-starter",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "MavenSettings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Application.WeWorkClientService.executor&quot;: &quot;Run&quot;,
+    &quot;Application.WxApiBaseResponse.executor&quot;: &quot;Run&quot;,
+    &quot;Application.WxSdkHttpUtil.executor&quot;: &quot;Run&quot;,
+    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.wework-sdk-plus-spring-boot-starter [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.wework-sdk-plus-spring-boot-starter [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.wework-sdk-plus-spring-boot-starter [deploy].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.wework-sdk-plus-spring-boot-starter [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.wework-sdk-plus-spring-boot-starter [package].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/zhaohaoren/workspace/corp/tt/wework-sdk-plus-spring-boot-starter&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.wework.sdk.starter.sdk.wework.api.externalcontact.response" />
@@ -194,7 +160,11 @@
       <workItem from="1722478396212" duration="79000" />
       <workItem from="1722478513282" duration="14958000" />
       <workItem from="1722579919404" duration="8325000" />
-      <workItem from="1722824106457" duration="24247000" />
+      <workItem from="1722824106457" duration="24287000" />
+      <workItem from="1722910498616" duration="313000" />
+      <workItem from="1723032459573" duration="1873000" />
+      <workItem from="1723082659558" duration="2047000" />
+      <workItem from="1723183233106" duration="4009000" />
     </task>
     <servers />
   </component>

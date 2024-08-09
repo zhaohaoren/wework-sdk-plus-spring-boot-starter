@@ -49,7 +49,12 @@ public enum WxErrCodeEnum {
     /**
      * 企业主体被封！无法获取token
      */
-    CORP_INVALID(40013, "invalid corpid");
+    CORP_INVALID(40013, "invalid corpid"),
+
+    INVALID_OPENID(40073, "invalid openId"),
+    INVALID_CUSTOMER_UNION_ID(610014, "invalid customer unionid"),
+    CORP_SUBJECT_NOT_MATCH(610017, "mini program and corp subject name not match"),
+    ;
 
     private final Integer errCode;
     private final String errMsg;

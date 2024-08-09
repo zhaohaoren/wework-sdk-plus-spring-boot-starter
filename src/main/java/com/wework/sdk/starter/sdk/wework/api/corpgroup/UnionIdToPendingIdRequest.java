@@ -24,12 +24,12 @@ import java.util.List;
 @Builder
 public class UnionIdToPendingIdRequest extends WxApiBaseRequest<UnionIdToPendingIdResponse> {
 
-    private final static String URL = "https://qyapi.weixin.qq.com/cgi-bin/corpgroup/batch/external_userid_to_pending_id?access_token=";
+    private final static String URL = "https://qyapi.weixin.qq.com/cgi-bin/corpgroup/unionid_to_pending_id?access_token=";
 
-    @JsonProperty("chat_id")
-    private String chatId;
-    @JsonProperty("external_userid")
-    private List<String> externalUserId;
+    @JsonProperty("unionid")
+    private String unionId;
+    @JsonProperty("openid")
+    private String openId;
 
     @Override
     public UnionIdToPendingIdResponse request(String token) throws TokenExpiredException {
